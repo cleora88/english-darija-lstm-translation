@@ -15,7 +15,7 @@ Source: Guidelines_RNN_2627.pdf, Advanced Natural Language Processing, 2026/2027
 | Evaluate final performance and discuss improvements | Test BLEU/chrF, copy baseline, actual examples and limitations |
 | Short report of 4-5 pages | Five-page English report in `output/` |
 | Ten-minute oral presentation in English, with slides | English slide deck and timed speaker notes in `output/` |
-| Public GitHub repository containing PyTorch code | Published repository linked in README after verification |
+| Public GitHub repository containing PyTorch code | https://github.com/cleora88/english-darija-lstm-translation |
 | Five or six students from the same lab group | **Pending: four supplied names currently listed, TP B. Add one or two members or obtain the professor's exception.** |
 | Submission by 25 October 2026, including that day | Student submits through https://forms.cloud.microsoft/r/78AEQ7pj2d |
 | Defense during lab 6 | Team prepares and rehearses the presentation |

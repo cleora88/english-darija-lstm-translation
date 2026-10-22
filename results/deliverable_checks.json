@@ -1,0 +1,18 @@
+{
+  "report_pages": 5,
+  "slides": 10,
+  "speaker_note_seconds": 600,
+  "supplied_names": [
+    "Zouhair Eouichak",
+    "Aymane El Youssi",
+    "Malak Bartal",
+    "Sara Baalla"
+  ],
+  "team_size_requirement": "pending: four supplied names, five or six required",
+  "manual_models": [
+    "vanilla",
+    "cifg",
+    "wmc"
+  ],
+  "parameter_counts_present": true
+}

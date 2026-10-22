@@ -4,6 +4,8 @@ Advanced Natural Language Processing, UIR, 2026/2027. Group TP B.
 
 Team: Zouhair Eouichak, Aymane El Youssi, Malak Bartal and Sara Baalla. The assignment requires five or six students from the same lab group; the remaining membership or an exception must be confirmed before submission.
 
+Public PyTorch repository: https://github.com/cleora88/english-darija-lstm-translation
+
 ## Task and data
 
 Translate English into Latin-script Moroccan Darija using the dataset explicitly listed in the project brief: [imomayiz/darija-english](https://huggingface.co/datasets/imomayiz/darija-english). Source column: `eng`. Target column: `darija`. The Arabic-script `darija_ar` column is not a model input or target in this experiment.
