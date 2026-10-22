@@ -1,0 +1,7 @@
+{
+  "bleu": 0.3919575439684353,
+  "chrf": 9.965574296832227,
+  "exact_match": 0.0007892659826361484,
+  "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+  "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+}

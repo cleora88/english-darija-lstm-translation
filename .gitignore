@@ -1,0 +1,11 @@
+.venv*/
+.build/
+.chart-data-*/
+.ruff_cache/
+__pycache__/
+.ruff_cache/
+data/
+results/*.pt
+results/*_pairs.csv
+results/*_predictions.csv
+output/*_candidate*.pptx

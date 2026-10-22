@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><style>
+    body{font:18px Arial;background:#f7f5ee;color:#18364b;margin:42px;max-width:1160px}
+    h1{font-size:34px}h2{color:#007f7a;font-size:25px}pre{white-space:pre-wrap;background:white;padding:24px;font:15px Consolas;line-height:1.45}
+    table{border-collapse:collapse;width:100%;background:white}th{background:#102c40;color:white}td,th{padding:12px;text-align:left;border-bottom:1px solid #c7d5d2}img{max-width:100%;margin-top:24px}footer{font-size:14px;color:#526878;margin-top:30px}
+    </style><h1>English-to-Darija LSTM / 05 evaluation</h1><p>UIR / Advanced NLP / TP B / 2026-2027</p><h2>Final held-out test scores</h2><pre>model,run_id,learning_rate,batch_size,best_epoch,parameters,bleu,chrf,exact_match,bleu_signature,chrf_signature
+vanilla,vanilla_lr0.003_batch128,0.003,128,12,713296,0.6454919349120691,15.877386931467113,0.0015785319652722968,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0,nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0
+cifg,cifg_lr0.003_batch128,0.003,128,12,655696,0.6794162566569633,15.861263008759751,0.0023677979479084454,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0,nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0
+wmc,wmc_lr0.003_batch128,0.003,128,12,811600,1.3265783743662314,16.0485914604513,0.0007892659826361484,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0,nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0
+</pre><h2>Independent verification</h2><pre>{
+  &quot;source_disjoint&quot;: true,
+  &quot;target_disjoint&quot;: true,
+  &quot;groups_disjoint&quot;: true,
+  &quot;runs&quot;: 9,
+  &quot;epochs_per_run&quot;: 12,
+  &quot;metrics_recomputed&quot;: true,
+  &quot;validation_only_selection&quot;: true,
+  &quot;parameter_counts_verified&quot;: true,
+  &quot;generation_protocol&quot;: &quot;reference-free greedy decoding, max 48 tokens, EOS termination&quot;
+}</pre><img src="../results/test_comparison.png"><img src="../results/learning_curves.png"><footer>Browser capture of saved experiment data, code and logs.</footer>

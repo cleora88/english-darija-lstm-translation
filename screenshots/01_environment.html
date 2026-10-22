@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><style>
+    body{font:18px Arial;background:#f7f5ee;color:#18364b;margin:42px;max-width:1160px}
+    h1{font-size:34px}h2{color:#007f7a;font-size:25px}pre{white-space:pre-wrap;background:white;padding:24px;font:15px Consolas;line-height:1.45}
+    table{border-collapse:collapse;width:100%;background:white}th{background:#102c40;color:white}td,th{padding:12px;text-align:left;border-bottom:1px solid #c7d5d2}img{max-width:100%;margin-top:24px}footer{font-size:14px;color:#526878;margin-top:30px}
+    </style><h1>English-to-Darija LSTM / 01 environment</h1><p>UIR / Advanced NLP / TP B / 2026-2027</p><h2>Recorded training runtime</h2><pre>{
+  &quot;python&quot;: &quot;3.14.0&quot;,
+  &quot;torch&quot;: &quot;2.9.1+cu128&quot;,
+  &quot;device&quot;: &quot;cuda&quot;,
+  &quot;gpu&quot;: &quot;NVIDIA GeForce RTX 4070 Laptop GPU&quot;,
+  &quot;precision&quot;: &quot;bfloat16 autocast with float32 parameters&quot;
+}</pre><h2>Equation and model checks</h2><pre>test_cell_equations_and_gradients (__main__.TranslationTests.test_cell_equations_and_gradients) ... ok
+test_generation_stops_at_eos (__main__.TranslationTests.test_generation_stops_at_eos) ... ok
+test_metric_identity (__main__.TranslationTests.test_metric_identity) ... ok
+test_padding_and_target_causality (__main__.TranslationTests.test_padding_and_target_causality) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.133s
+
+OK
+</pre><footer>Browser capture of saved experiment data, code and logs.</footer>

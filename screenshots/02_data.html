@@ -1,0 +1,43 @@
+<!doctype html><meta charset="utf-8"><style>
+    body{font:18px Arial;background:#f7f5ee;color:#18364b;margin:42px;max-width:1160px}
+    h1{font-size:34px}h2{color:#007f7a;font-size:25px}pre{white-space:pre-wrap;background:white;padding:24px;font:15px Consolas;line-height:1.45}
+    table{border-collapse:collapse;width:100%;background:white}th{background:#102c40;color:white}td,th{padding:12px;text-align:left;border-bottom:1px solid #c7d5d2}img{max-width:100%;margin-top:24px}footer{font-size:14px;color:#526878;margin-top:30px}
+    </style><h1>English-to-Darija LSTM / 02 data</h1><p>UIR / Advanced NLP / TP B / 2026-2027</p><h2>Parallel-data audit and fixed splits</h2><pre>{
+  &quot;raw_rows&quot;: 87785,
+  &quot;missing_english&quot;: 75042,
+  &quot;complete_pairs_before_deduplication&quot;: 12743,
+  &quot;duplicate_pairs_removed&quot;: 121,
+  &quot;usable_pairs&quot;: 12622,
+  &quot;connected_groups&quot;: 11036,
+  &quot;largest_group&quot;: 29,
+  &quot;seed&quot;: 42,
+  &quot;split_strategy&quot;: &quot;connected source/target groups; approximately 80/10/10&quot;,
+  &quot;source_column&quot;: &quot;eng&quot;,
+  &quot;target_column&quot;: &quot;darija&quot;,
+  &quot;target_script&quot;: &quot;Latin Darija (case preserved)&quot;,
+  &quot;vocabulary_size&quot;: 2000,
+  &quot;max_length&quot;: 48,
+  &quot;splits&quot;: {
+    &quot;train&quot;: {
+      &quot;pairs&quot;: 10110,
+      &quot;source_mean_tokens&quot;: 10.369040553907023,
+      &quot;target_mean_tokens&quot;: 11.598615232443125,
+      &quot;source_truncation_fraction&quot;: 9.891196834817012e-05,
+      &quot;target_truncation_fraction&quot;: 0.000791295746785361
+    },
+    &quot;validation&quot;: {
+      &quot;pairs&quot;: 1245,
+      &quot;source_mean_tokens&quot;: 10.706827309236948,
+      &quot;target_mean_tokens&quot;: 11.981526104417672,
+      &quot;source_truncation_fraction&quot;: 0.0008032128514056225,
+      &quot;target_truncation_fraction&quot;: 0.001606425702811245
+    },
+    &quot;test&quot;: {
+      &quot;pairs&quot;: 1267,
+      &quot;source_mean_tokens&quot;: 10.363851617995264,
+      &quot;target_mean_tokens&quot;: 11.515390686661405,
+      &quot;source_truncation_fraction&quot;: 0.0007892659826361484,
+      &quot;target_truncation_fraction&quot;: 0.0015785319652722968
+    }
+  }
+}</pre><img src="../results/data_exploration.png"><footer>Browser capture of saved experiment data, code and logs.</footer>

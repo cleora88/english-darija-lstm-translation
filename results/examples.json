@@ -1,0 +1,27 @@
+{
+  "model": "cifg",
+  "selection": "10th, 50th and 90th percentile sentence chrF, ordered deterministically",
+  "examples": [
+    {
+      "case": "weak",
+      "source": "Amazing.",
+      "reference": "mod8ich",
+      "prediction": "fia",
+      "sentence_chrf": 5.376344086021505
+    },
+    {
+      "case": "typical",
+      "source": "Your job sounds very interesting",
+      "reference": "lkhdma dialk katban lia momti3a",
+      "prediction": "machi mochkil, 3la Si3a",
+      "sentence_chrf": 12.530931584753816
+    },
+    {
+      "case": "strong",
+      "source": "i want to buy stamps",
+      "reference": "bghit nshri tnabr",
+      "prediction": "bghit n5edt l7wayj",
+      "sentence_chrf": 28.399905400923636
+    }
+  ]
+}

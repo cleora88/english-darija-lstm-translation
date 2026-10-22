@@ -1,0 +1,61 @@
+<!doctype html><meta charset="utf-8"><style>
+    body{font:18px Arial;background:#f7f5ee;color:#18364b;margin:42px;max-width:1160px}
+    h1{font-size:34px}h2{color:#007f7a;font-size:25px}pre{white-space:pre-wrap;background:white;padding:24px;font:15px Consolas;line-height:1.45}
+    table{border-collapse:collapse;width:100%;background:white}th{background:#102c40;color:white}td,th{padding:12px;text-align:left;border-bottom:1px solid #c7d5d2}img{max-width:100%;margin-top:24px}footer{font-size:14px;color:#526878;margin-top:30px}
+    </style><h1>English-to-Darija LSTM / 03 model checks</h1><p>UIR / Advanced NLP / TP B / 2026-2027</p><h2>Equations, gradients, padding, causality and EOS</h2><pre>test_cell_equations_and_gradients (__main__.TranslationTests.test_cell_equations_and_gradients) ... ok
+test_generation_stops_at_eos (__main__.TranslationTests.test_generation_stops_at_eos) ... ok
+test_metric_identity (__main__.TranslationTests.test_metric_identity) ... ok
+test_padding_and_target_causality (__main__.TranslationTests.test_padding_and_target_causality) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.133s
+
+OK
+</pre><h2>Manual recurrent-cell implementation</h2><pre>&quot;&quot;&quot;Vanilla, CIFG and WMC recurrent cells for sequence-to-sequence translation.&quot;&quot;&quot;
+
+import torch
+from torch import Tensor, nn
+
+CELL_TYPES = (&quot;vanilla&quot;, &quot;cifg&quot;, &quot;wmc&quot;)
+RecurrentState = tuple[Tensor, Tensor]
+
+
+class Cell(nn.Module):
+    &quot;&quot;&quot;Compute one recurrent step using the project appendix equations.&quot;&quot;&quot;
+
+    def __init__(self, input_size: int, hidden_size: int, kind: str) -&gt; None:
+        super().__init__()
+        if kind not in CELL_TYPES:
+            raise ValueError(f&quot;Unknown cell type {kind!r}; choose from {CELL_TYPES}.&quot;)
+        self.kind = kind
+        self.hidden_size = hidden_size
+        self.gate_count = 3 if kind == &quot;cifg&quot; else 4
+        self.x = nn.Linear(input_size, self.gate_count * hidden_size)
+        self.h = nn.Linear(hidden_size, self.gate_count * hidden_size, bias=False)
+        if kind == &quot;wmc&quot;:
+            self.ci = nn.Linear(hidden_size, hidden_size, bias=False)
+            self.cf = nn.Linear(hidden_size, hidden_size, bias=False)
+            self.co = nn.Linear(hidden_size, hidden_size, bias=False)
+
+    def forward(self, x: Tensor, state: RecurrentState) -&gt; RecurrentState:
+        hidden, memory = state
+        projections = (self.x(x) + self.h(hidden)).chunk(self.gate_count, dim=-1)
+        if self.kind == &quot;cifg&quot;:
+            forget_gate, output_gate, candidate = projections
+            forget_gate = forget_gate.sigmoid()
+            input_gate = 1 - forget_gate
+        else:
+            input_gate, forget_gate, output_gate, candidate = projections
+            if self.kind == &quot;wmc&quot;:
+                input_gate = input_gate + self.ci(memory).tanh()
+                forget_gate = forget_gate + self.cf(memory).tanh()
+            input_gate = input_gate.sigmoid()
+            forget_gate = forget_gate.sigmoid()
+
+        memory = forget_gate * memory + input_gate * candidate.tanh()
+        if self.kind == &quot;wmc&quot;:
+            # The output gate reads the updated memory c_t.
+            output_gate = output_gate + self.co(memory).tanh()
+        hidden = output_gate.sigmoid() * memory.tanh()
+        return hidden, memory
+</pre><footer>Browser capture of saved experiment data, code and logs.</footer>

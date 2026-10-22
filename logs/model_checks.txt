@@ -1,0 +1,9 @@
+test_cell_equations_and_gradients (__main__.TranslationTests.test_cell_equations_and_gradients) ... ok
+test_generation_stops_at_eos (__main__.TranslationTests.test_generation_stops_at_eos) ... ok
+test_metric_identity (__main__.TranslationTests.test_metric_identity) ... ok
+test_padding_and_target_causality (__main__.TranslationTests.test_padding_and_target_causality) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.133s
+
+OK

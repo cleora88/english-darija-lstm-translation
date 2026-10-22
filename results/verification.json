@@ -1,0 +1,11 @@
+{
+  "source_disjoint": true,
+  "target_disjoint": true,
+  "groups_disjoint": true,
+  "runs": 9,
+  "epochs_per_run": 12,
+  "metrics_recomputed": true,
+  "validation_only_selection": true,
+  "parameter_counts_verified": true,
+  "generation_protocol": "reference-free greedy decoding, max 48 tokens, EOS termination"
+}

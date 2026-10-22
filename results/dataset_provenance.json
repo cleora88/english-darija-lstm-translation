@@ -1,0 +1,9 @@
+{
+  "dataset": "imomayiz/darija-english",
+  "revision": "9f7e6c57b150873ea3241c9743ac6d5a3175a635",
+  "file": "sentences.csv",
+  "url": "https://huggingface.co/datasets/imomayiz/darija-english/resolve/9f7e6c57b150873ea3241c9743ac6d5a3175a635/sentences.csv",
+  "sha256": "5dc096fc8684f1f6761d57de069883132390dcf74754a06c7606c39ee2228129",
+  "source_column": "eng",
+  "target_column": "darija"
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "model": "vanilla",
+    "run_id": "vanilla_lr0.003_batch128",
+    "learning_rate": 0.003,
+    "batch_size": 128,
+    "best_epoch": 12,
+    "parameters": 713296,
+    "bleu": 0.6454919349120691,
+    "chrf": 15.877386931467113,
+    "exact_match": 0.0015785319652722968,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  {
+    "model": "cifg",
+    "run_id": "cifg_lr0.003_batch128",
+    "learning_rate": 0.003,
+    "batch_size": 128,
+    "best_epoch": 12,
+    "parameters": 655696,
+    "bleu": 0.6794162566569633,
+    "chrf": 15.861263008759751,
+    "exact_match": 0.0023677979479084454,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  {
+    "model": "wmc",
+    "run_id": "wmc_lr0.003_batch128",
+    "learning_rate": 0.003,
+    "batch_size": 128,
+    "best_epoch": 12,
+    "parameters": 811600,
+    "bleu": 1.3265783743662314,
+    "chrf": 16.0485914604513,
+    "exact_match": 0.0007892659826361484,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  }
+]
